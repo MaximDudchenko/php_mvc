@@ -1,5 +1,12 @@
 <?php
 
-require_once dirname(__DIR__) . '/vendor/autoload.php';
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
 
-dd(__FILE__);
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+$dotenv = \Dotenv\Dotenv::createUnsafeImmutable(dirname(__DIR__));
+$dotenv->load();
+
+use Core\Model;
+
+dd(Model::connect());
