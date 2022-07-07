@@ -10,6 +10,11 @@ $dotenv = \Dotenv\Dotenv::createUnsafeImmutable(dirname(__DIR__));
 $dotenv->load();
 
 use Core\Router;
+use App\Models\User;
+
+if (!session_id()) {
+    session_start();
+}
 
 try {
     $router = new Router();

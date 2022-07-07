@@ -14,6 +14,9 @@
                         <label for="password" class="form-label">Password:</label>
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
+                    <div class="mb-3">
+                        <a href="<?= ROOT_URL . '/registration' ?>">Create an account</a>
+                    </div>
                     <button type="submit" class="btn btn-outline-primary form-control my-3">Sign In</button>
                 </form>
             </div>
