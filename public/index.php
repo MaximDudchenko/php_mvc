@@ -22,7 +22,7 @@ try {
     require_once ROOT_DIR . '/routes/routes.php';
 
 
-    if (!preg_match('/assets/i', $_SERVER['REQUEST_URI'])) {
+    if (!preg_match('/assets/', $_SERVER['REQUEST_URI'])) {
         $router->dispatch($_SERVER['REQUEST_URI']);
     }
 } catch (Exception $e) {
