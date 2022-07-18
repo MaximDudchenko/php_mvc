@@ -2,9 +2,13 @@
 
 namespace App\Controllers;
 
-class HomeController
-{
-    public function index() {
+use Core\Controller;
+use Core\View;
 
+class HomeController extends Controller
+{
+    public function index()
+    {
+        View::render('home/index');
     }
 }

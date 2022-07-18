@@ -21,7 +21,9 @@ class SessionHelper
 
     public static function destroy()
     {
-        session_abort();
+        if (session_id()) {
+            session_destroy();
+        }
     }
 
 }
