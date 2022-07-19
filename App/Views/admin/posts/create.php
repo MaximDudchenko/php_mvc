@@ -9,6 +9,7 @@
                     <label for="title" class="form-label">Title:</label>
                     <input type="text" class="form-control" id="title" name="title" value="" required>
                 </div>
+
                 <div class="mb-3">
                     <label for="category_id" class="form-label">Category:</label>
                     <select name="category_id" id="category_id" class="form-control" required>
@@ -17,6 +18,7 @@
                         <?php endforeach; ?>
                     </select>
                 </div>
+
                 <div class="mb-3">
                     <label for="body" class="form-label">Body:</label>
                     <textarea name="body" id="body" class="form-control" cols="30" rows="10" placeholder="Post text"></textarea>
@@ -26,6 +28,7 @@
                     <input type="file" class="form-control" id="image" name="image" value="">
                 </div>
                 <button type="submit" class="btn btn-outline-primary form-control my-3">Create</button>
+
             </form>
         </div>
     </div>
