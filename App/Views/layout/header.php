@@ -10,3 +10,4 @@
     <title><?= !empty($pageTitle) ? $pageTitle : 'Default' ?></title>
 </head>
 <body>
+<?php include_once VIEW_DIR . '/nav.php'; ?>

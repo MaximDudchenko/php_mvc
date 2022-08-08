@@ -26,15 +26,17 @@ trait QueryTrait
         $sql = 'SELECT * FROM ' . static::$tableName . ' WHERE id = :id';
         $query = static::connect()->prepare($sql);
         $query->bindParam('id', $id, PDO::PARAM_INT);
+        $query->execute();
 
         return $query->fetchObject(static::class);
     }
 
     public static function findBy(string $column, mixed $value)
     {
-        $sql = 'SELECT * FROM' . static::$tableName . ' WHERE ' . $column . ' = :' . $column;
+        $sql = 'SELECT * FROM ' . static::$tableName . ' WHERE ' . $column . ' = :' . $column;
         $query = static::connect()->prepare($sql);
-        $query->bindParam($column, $value);
+        $query->bindValue(":{$column}", $value);
+        $query->execute();
 
         return $query->fetchObject(static::class);
     }

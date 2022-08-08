@@ -10,11 +10,23 @@ use Core\View;
 class AuthController extends Controller
 {
     public function login() {
+        if(SessionHelper::isUserLoggedIn()) {
+            redirect();
+        }
         View::render('auth/login');
     }
 
     public function register() {
+        if(SessionHelper::isUserLoggedIn()) {
+            redirect();
+        }
         View::render('auth/registration');
+    }
+
+    public function logout()
+    {
+        SessionHelper::destroy();
+        redirect();
     }
 
     public function verify() {
@@ -31,11 +43,5 @@ class AuthController extends Controller
         $this->data += $validator->getErrors();
 
         View::render('auth/registration', $this->data);
-    }
-
-    public function logout()
-    {
-        SessionHelper::destroy();
-        redirect();
     }
 }
