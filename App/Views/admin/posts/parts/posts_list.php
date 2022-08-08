@@ -12,6 +12,7 @@
                     <th scope="col"></th>
                 </tr>
                 </thead>
+
                 <tbody>
                 <?php foreach ($posts as $post): ?>
                     <tr>
@@ -28,6 +29,7 @@
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         </td>
+
                         <td><?= $post->title ?></td>
                         <td><?= $post->created_at ?></td>
                         <td>
@@ -44,6 +46,7 @@
                         </td>
                     </tr>
                 <?php endforeach; ?>
+
                 </tbody>
             </table>
         </div>
